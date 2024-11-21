@@ -5,12 +5,12 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
   minify_job:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -27,4 +27,4 @@ jobs:
         run: minify main.js > main.min.js
 
       - name: Commit minified file
-        uses: stefanzweife/git-auto-commit-action@v5
+        uses: stef
